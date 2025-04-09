@@ -8,6 +8,9 @@ const ClusterFeature = lazy(() => import('../components/cluster/cluster-feature'
 const DashboardFeature = lazy(() => import('../components/dashboard/dashboard-feature'))
 
 const links: { label: string; path: string }[] = [
+  { label: 'Home', path: '/' },
+  { label: 'Explore', path: '#' },
+  { label: 'Profile', path: '#' },
   { label: 'Account', path: '/account' },
   { label: 'Clusters', path: '/clusters' },
 ]
