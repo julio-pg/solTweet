@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "name": "hello_anchor",
+  "instructions": [
+    {
+      "name": "createProfile",
+      "accounts": [
+        { "name": "profile", "isMut": true, "isSigner": false },
+        { "name": "user", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "username", "type": "string" },
+        { "name": "bio", "type": "string" },
+        { "name": "avatarCid", "type": "string" }
+      ]
+    },
+    {
+      "name": "createPost",
+      "accounts": [
+        { "name": "post", "isMut": true, "isSigner": false },
+        { "name": "user", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [{ "name": "content", "type": "string" }]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "UserProfile",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "username", "type": "string" },
+          { "name": "bio", "type": "string" },
+          { "name": "avatarCid", "type": "string" },
+          { "name": "authority", "type": "publicKey" }
+        ]
+      }
+    },
+    {
+      "name": "Post",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "user", "type": "publicKey" },
+          { "name": "content", "type": "string" },
+          { "name": "timestamp", "type": "i64" },
+          { "name": "tipAmount", "type": "u64" }
+        ]
+      }
+    }
+  ]
+}
